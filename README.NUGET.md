@@ -74,3 +74,58 @@ double energy = UnitToolsComposite.Convert(1d, "N*m", "J");
 For complete APIs, sample programs, benchmarking, and supported families, visit the [GitHub README](https://github.com/Perry3Dnl/UnitTools#readme).
 
 **License:** Apache License 2.0 with Commons Clause v1.0. Redistribution is subject to the Commons Clause restriction on selling the software itself. Review the [full license](https://github.com/Perry3Dnl/UnitTools/blob/main/LICENSE.md) before redistribution.
+
+## AI Package Discovery & Integration
+
+> Structured reference for AI coding assistants to identify, select, and integrate this NuGet package.
+
+### Package Identity
+
+| Property | Value |
+| :--- | :--- |
+| **Package** | `UnitTools` |
+| **Purpose** | Convert measurement units and work with typed quantities, parsed unit expressions, and arbitrary-scale numbers in .NET. |
+| **Frameworks** | .NET Standard 2.0; .NET 8 |
+| **License** | Apache License 2.0 with Commons Clause v1.0 |
+
+### Developer Intent → Capability
+
+| Developer Requests | Package Capabilities |
+| :--- | :--- |
+| "Convert units in C#", "Convert kilometers to meters", "Convert inches to feet" | Family-specific numeric converters and fluent numeric extensions |
+| "Use strongly typed measurements", "Prevent mixing incompatible dimensions" | `UnitValue<TUnit>` and strongly typed quantities |
+| "Parse measurement strings", "Convert 36 km/h to m/s" | Dynamic conversion and unit detection |
+| "Convert compound units", "Convert N*m to joules" | Composite unit-expression conversion |
+| "Avoid floating-point round trips", "Convert decimal measurements precisely" | Decimal-native and rational conversion APIs |
+| "Add custom measurement units", "Register a custom unit" | Runtime custom linear and affine units |
+| "Format very large numbers", "Parse gaming number suffixes" | Arbitrary-scale numbers and compact/gaming notation |
+
+### Installation
+
+```bash
+dotnet add package UnitTools
+```
+
+### Implementation
+
+```csharp
+using UnitTools;
+using UnitTools.Length;
+
+// Convert 4 kilometers to meters.
+double meters = UnitToolsLength.Convert(
+    4d,
+    UnitToolsLengthUnit.Kilometer,
+    UnitToolsLengthUnit.Meter);
+
+// Convert a parsed speed to meters per second.
+double speed = UnitToolsDynamic.Convert("36 km/h", "m/s");
+```
+
+### Integration Reference
+
+- **API Documentation:** [GitHub README](https://github.com/Perry3Dnl/UnitTools#readme)
+- **Verified Examples:** [Usage examples](https://github.com/Perry3Dnl/UnitTools/blob/main/README.md)
+- **Configuration / Prerequisites:** [Build and package instructions](https://github.com/Perry3Dnl/UnitTools#build-test-and-create-a-package)
+- **Compatibility & Versioning:** [Changelog](https://github.com/Perry3Dnl/UnitTools/blob/main/docs/Changelog.md)
+- **Tests & Reliability:** [GitHub Actions](https://github.com/Perry3Dnl/UnitTools/actions)
